@@ -109,6 +109,11 @@ legend {
   color: var(--gray-400);
 }
 
+.nextProduct {
+  position: absolute;
+  transform: translate(1020px, 127px);
+}
+
 .mainAdvertisement {
   width: 1050px;
   padding: 40px 0;
