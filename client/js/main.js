@@ -87,10 +87,10 @@ const json = JSON.stringify(dataFile);
 const obj = JSON.parse(json);
 
 function productMaking(num, product) {
-  let infoSaleClass = document.getElementById(product + "-sale");
-  let infoPriceClass = document.getElementById(product + "-price");
+  let infoSaleClass = document.getElementsByClassName(product + "-sale")[0];
+  let infoPriceClass = document.getElementsByClassName(product + "-price")[0];
 
-  let addres = "/market-lion/client/assets/";
+  let address = "/market-lion/client/assets/";
   let img = obj.products[num]["image"].thumbnail;
   let name = obj.products[num]["name"];
   let saleRatio = obj.products[num]["saleRatio"] * 100;
@@ -102,13 +102,17 @@ function productMaking(num, product) {
     infoPriceClass.className += " a11y-hidden";
     salePrice = price;
   }
-  img = addres + img;
 
-  document.getElementById(product + "-img").setAttribute("src", img);
-  document.getElementById(product + "-name").innerHTML = name;
-  document.getElementById(product + "-sale").innerHTML = saleRatio + "%";
-  document.getElementById(product + "-salePrice").innerHTML = salePrice + " 원";
-  document.getElementById(product + "-price").innerHTML = price + " 원";
+  img = address + img;
+
+  document.getElementsByClassName(product + "-img")[0].setAttribute("src", img);
+  document.getElementsByClassName(product + "-name")[0].innerHTML = name;
+  document.getElementsByClassName(product + "-sale")[0].innerHTML =
+    saleRatio + "%";
+  document.getElementsByClassName(product + "-salePrice")[0].innerHTML =
+    salePrice + " 원";
+  document.getElementsByClassName(product + "-price")[0].innerHTML =
+    price + " 원";
 }
 
 productMaking(0, "ubuho");
