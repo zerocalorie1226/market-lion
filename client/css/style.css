@@ -109,7 +109,7 @@ legend {
   color: var(--gray-400);
 }
 
-.nextProduct {
+.nextGroup {
   position: absolute;
   transform: translate(1020px, -300px);
 }
