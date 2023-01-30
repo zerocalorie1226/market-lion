@@ -20,10 +20,10 @@ body {
 /* 숨김 콘텐츠 */
 .a11y-hidden,
 legend {
+  overflow: hidden;
   position: absolute;
   width: 1px;
   height: 1px;
-  overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
@@ -55,15 +55,15 @@ a {
 
 .mainProduct {
   display: flex;
-  justify-content: space-between;
   overflow: auto;
   margin: 40px 0;
+  justify-content: space-between;
 }
 
 .product {
-  position: relative;
-  float: left;
   overflow: hidden;
+  float: left;
+  position: relative;
 }
 
 .product-image-container {
@@ -75,10 +75,10 @@ a {
 }
 
 .productCart {
-  border: none;
   position: absolute;
   right: var(--text-10);
   bottom: 100px;
+  border: none;
   background-color: transparent;
 }
 
@@ -91,27 +91,27 @@ a {
 }
 
 .discount-rate {
+  color: var(--accent-yellow);
   font-family: "Pretendard";
   font-style: normal;
   font-weight: var(--bold);
   font-size: 20px;
-  color: var(--accent-yellow);
 }
 .discount-price {
+  color: var(--content);
   font-family: "Pretendard";
   font-style: normal;
   font-weight: var(--bold);
   font-size: 20px;
-  color: var(--content);
 }
 
 .original-price {
+  color: var(--gray-400);
   font-family: "Pretendard";
   font-style: normal;
   font-weight: var(--regular);
-  font-size: var(--text-12);
-  color: var(--gray-400);
   text-decoration: line-through;
+  font-size: var(--text-12);
 }
 
 .nextGroup {
