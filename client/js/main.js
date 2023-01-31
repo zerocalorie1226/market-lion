@@ -1,5 +1,3 @@
-// console.log(data);
-
 const mainProduct = document.querySelectorAll(".mainProduct");
 
 data.products.map(item => {
@@ -25,11 +23,15 @@ data.products.map(item => {
             <div class="product-price">
               <div>
                 <span class="discount-rate">${saleRatio}</span>
-                <span class="discount-price">${salePrice2 + " 원"}</span>
+                <span class="discount-price">${
+                  salePrice2.toLocaleString("ko-KR") + " 원"
+                }</span>
               </div>
               <div>
                 <span class="original-price">${(price =
-                  item.salePrice === 0 ? "" : price + " 원")}</span>
+                  item.salePrice === 0
+                    ? ""
+                    : price.toLocaleString("ko-KR") + " 원")}</span>
               </div>
             </div>
           </div>
@@ -46,6 +48,12 @@ data.products.map(item => {
     </div>
   `;
 
-  mainProduct[0].insertAdjacentHTML("beforeend", productTemplate);
-  mainProduct[1].insertAdjacentHTML("beforeend", productTemplate);
+  function insert(load, num) {
+    load[num].insertAdjacentHTML("beforeend", productTemplate);
+  }
+
+  for (let i = 0; i < mainProduct.length; i++) insert(mainProduct, i);
+
+  // mainProduct[0].insertAdjacentHTML("beforeend", productTemplate);
+  // mainProduct[1].insertAdjacentHTML("beforeend", productTemplate);
 });
