@@ -77,7 +77,7 @@ a {
 .productCart {
   position: absolute;
   right: var(--text-10);
-  bottom: 100px;
+  bottom: 110px;
   border: none;
   background-color: transparent;
 }
