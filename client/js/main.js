@@ -1,107 +1,122 @@
-const dataFile = {
-  products: [
-    {
-      id: "product-rksk",
-      name: "[대구 반할만떡] 유부호만두",
-      description: "유부로 속을 든든히 채운 군만두",
-      price: 6900,
-      saleRatio: 0.24,
-      salePrice: 5244,
-      image: {
-        thumbnail: "ubuho/thumbnail.jpg",
-        view: "ubuho/detail_view.jpg",
-        banner: "ubuho/detail_banner.jpg",
-        info: "ubuho/detail_info.jpg",
-        alt: "유부호 만두",
-      },
-      stock: 3,
-    },
-    {
-      id: "product-ekfk",
-      name: "[풀무원] 탱탱쫄면 (4개입)",
-      description: "튀기지 않아 부드럽고 매콤한",
-      price: 4980,
-      saleRatio: 0,
-      salePrice: 0,
-      image: {
-        thumbnail: "tangtang/thumbnail.jpg",
-        view: "tangtang/detail_view.jpg",
-        banner: "tangtang/detail_banner.jpg",
-        info: "tangtang/detail_info.jpg",
-        alt: "풀무원 탱탱쫄면",
-      },
-      stock: 10,
-    },
-    {
-      id: "product-akqk",
-      name: "[홍대주꾸미] 주꾸미 볶음 300g (냉동)",
-      description: "매콤달콤한 마력의 밥도둑",
-      price: 7900,
-      saleRatio: 0.13,
-      salePrice: 6800,
-      image: {
-        thumbnail: "jukkumi/thumbnail.jpg",
-        view: "jukkumi/detail_view.jpg",
-        banner: "jukkumi/detail_banner.jpg",
-        info: "jukkumi/detail_info.jpg",
-        alt: "홍대 주꾸미",
-      },
-      stock: 8,
-    },
-    {
-      id: "product-tkwk",
-      name: "[강남면옥] 소갈비찜",
-      description: "보는 맛과 먹는 맛 모두 푸짐",
-      price: 29800,
-      saleRatio: 0,
-      salePrice: 0,
-      image: {
-        thumbnail: "kangnam/thumbnail.jpg",
-        view: "kangnam/detail_view.jpg",
-        banner: "kangnam/detail_banner.jpg",
-        info: "kangnam/detail_info.jpg",
-        alt: "강남면옥 소갈비찜",
-      },
-      stock: 2,
-    },
-    {
-      id: "product-ckzk",
-      name: "[Kalry's] 한돈 삼겹 베이컨",
-      description: "무항생제 한돈 삼겹살의 고소한 풍미 그대로",
-      price: 4500,
-      saleRatio: 0.25,
-      salePrice: 3375,
-      image: {
-        thumbnail: "bacon/thumbnail.jpg",
-        view: "bacon/detail_view.jpg",
-        banner: "bacon/detail_banner.jpg",
-        info: "bacon/detail_info.jpg",
-        alt: "칼리 한돈 삼겹 베이컨",
-      },
-      stock: 13,
-    },
-  ],
-};
+// console.log(data);
 
-const json = JSON.stringify(dataFile);
-const obj = JSON.parse(json);
+const mainProduct = document.querySelectorAll(".mainProduct");
 
-function productMaking(num, product) {
-  let infoSaleClass = document.getElementsByClassName(product + "-sale")[0];
+data.products.map(item => {
+  let name = item.name;
+  let thumbnail = item.image.thumbnail;
+  let price = item.price;
+  let alt = item.image.alt;
+  let salePrice2 = item.salePrice === 0 ? price : item.salePrice;
+  let saleRatio = item.saleRatio * 100 !== 0 ? item.saleRatio * 100 + "%" : "";
+
+  let productTemplate = `
+    <div class="product">
+      <a href="#">
+        <div class="product-image-container">
+          <img src="/market-lion/client/assets/${thumbnail}"
+            class="product-img "
+            alt="${alt}"
+          />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">${name}</h3>
+          <div>
+            <div class="product-price">
+              <div>
+                <span class="discount-rate">${saleRatio}</span>
+                <span class="discount-price">${salePrice2 + " 원"}</span>
+              </div>
+              <div>
+                <span class="original-price">${(price =
+                  item.salePrice === 0 ? "" : price + " 원")}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <button type="button" class="productCart">
+        <img
+          src="/market-lion/client/assets/icons/Icon/Cart.svg"
+          class="cart-img"
+          alt="장바구니 이미지"
+        />
+      </button>
+    </div>
+  `;
+
+  mainProduct[0].insertAdjacentHTML("beforeend", productTemplate);
+  mainProduct[1].insertAdjacentHTML("beforeend", productTemplate);
+});
+
+/*   let num = 0;
+  let productList={"tangtang","ubuho","kangnam","bacon"}
+  let abc = document.getElementsByClassName("tangtang-sale")[0];
+  console.log(abc); */
+
+/*   function classTemplate() {
+    
+  }
+
+  let infoSaleClass = document.getElementsByClassName(product + "-sale")[0]; //=> discount-rate tangtang-sale
   let infoPriceClass = document.getElementsByClassName(product + "-price")[0];
-
-  let address = "/market-lion/client/assets/";
-  let img = obj.products[num]["image"].thumbnail;
-  let name = obj.products[num]["name"];
-  let saleRatio = obj.products[num]["saleRatio"] * 100;
-  let salePrice = obj.products[num]["salePrice"];
-  let price = obj.products[num]["price"];
-
   if (saleRatio === 0) {
-    infoSaleClass.className += " a11y-hidden";
+    infoSaleClass.className += " a11y-hidden"; //=>discount-rate tangtang-sale a11y-hiidden
     infoPriceClass.className += " a11y-hidden";
     salePrice = price;
-  }
+  } */
+
+//saleRatio 0이 아니면 세일된 값 표시
+//saleRatio 0이면 원래값 표시
+
+/* function createProduct( ) {
+  return `
+  <div class="product">
+  <a href="">
+    <div class="product-image-container">
+      <img
+        src="/market-lion/client/assets/${}"
+        class="product-img tangtang-img"
+        alt="상품 이미지 "
+      />
+    </div>
+    <div class="product-info">
+      <h3 class="product-name tangtang-name"></h3>
+      <div>
+        <div class="product-price">
+          <div>
+            <span class="discount-rate tangtang-sale"></span>
+            <span class="discount-price tangtang-salePrice"></span>
+          </div>
+          <div>
+            <span class="original-price tangtang-price"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <button type="button" class="productCart">
+    <img
+      src="/market-lion/client/assets/main/visual/Cart.png"
+      class="cart-img"
+      alt="장바구니 이미지"
+    />
+  </button>
+  </div>
+  `;
+} */
+
+/* function productMaking(num, product) {
+
+
+  let address = "/market-lion/client/assets/";
+  let img = data.products[num]["image"].thumbnail;
+  let name = data.products[num]["name"];
+  let saleRatio = data.products[num]["saleRatio"] * 100;
+  let salePrice = data.products[num]["salePrice"];
+  let price = data.products[num]["price"];
 
   img = address + img;
 
@@ -115,7 +130,15 @@ function productMaking(num, product) {
     price + " 원";
 }
 
+//for each
 productMaking(0, "ubuho");
 productMaking(1, "tangtang");
 productMaking(3, "kangnam");
 productMaking(4, "bacon");
+
+//함수 1개의 기능만
+
+//카드를 만들어 => 카드를 만드는 함수(HTML) => 템플릿 --1
+//만든 카드를 HTML로 추가 => 추가해주는 함수 --2
+//데이터를 forEach => 데이터를 뽑아오고 그걸 템플릿에 넣어줄 수 있다.
+ */
