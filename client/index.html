@@ -1,314 +1,61 @@
 <!DOCTYPE html>
-<html lang="ko-KR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./js/main.js" type="module"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <section class="mainSection">
-      <div class="mainMain">
-        <div class="mainSub-title">
-          <span class="mainSub-titleRecommend-title">이 상품 어때요?</span>
+    <button id="open">open Modal</button>
+    <div class="popUp hidden">
+      <div class="popUp__overlay"></div>
+      <div class="popUp__content">
+        <div class="popUp__product--name">
+          <span>[풀무원] 탱탱쫄면 (4개입)</span>
         </div>
-        <div class="mainProduct">
-          <div class="product">
-            <a href="# ">
-              <div class="product-image-container">
-                <img
-                  src="/market-lion/client/assets/main/visual/product01.png"
-                  class="product-img"
-                  alt="상품 이미지 "
-                />
-                <div>
-                  <button type="button" class="productCart">
-                    <img
-                      src="/market-lion/client/assets/main/visual/Cart.png"
-                      class="cart-img"
-                      alt="장바구니 이미지"
-                    />
-                  </button>
-                </div>
-              </div>
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">[풀무원] 탱탱쫄면 (4개입)</h3>
-              <div>
-                <div class="product-price">
-                  <div>
-                    <span class="discount-rate">rate</span>
-                    <span class="discount-price">discount-price</span>
-                  </div>
-                  <div>
-                    <span class="original-price">original-price</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <a href="# ">
-              <div class="product-image-container">
-                <img
-                  src="/market-lion/client/assets/main/visual/product02.jpg"
-                  class="product-img"
-                  alt="상품 이미지 "
-                />
-                <div>
-                  <button type="button" class="productCart">
-                    <img
-                      src="/market-lion/client/assets/main/visual/Cart.png"
-                      class="cart-img"
-                      alt="장바구니 이미지"
-                    />
-                  </button>
-                </div>
-              </div>
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">[온더바디] 죠르디 시카 자석 선쿠션</h3>
-              <div>
-                <div class="product-price">
-                  <div>
-                    <span class="discount-rate">rate</span>
-                    <span class="discount-price">discount-price</span>
-                  </div>
-                  <div>
-                    <span class="original-price">original-price</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <a href="# ">
-              <div class="product-image-container">
-                <img
-                  src="/market-lion/client/assets/main/visual/product03.jpg"
-                  class="product-img"
-                  alt="상품 이미지 "
-                />
-                <div>
-                  <button type="button" class="productCart">
-                    <img
-                      src="/market-lion/client/assets/main/visual/Cart.png"
-                      class="cart-img"
-                      alt="장바구니 이미지"
-                    />
-                  </button>
-                </div>
-              </div>
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">유기농 밀키퀸 현미 4kg</h3>
-              <div>
-                <div class="product-price">
-                  <div>
-                    <span class="discount-rate">rate</span>
-                    <span class="discount-price">discount-price</span>
-                  </div>
-                  <div>
-                    <span class="original-price">original-price</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <a href="# ">
-              <div class="product-image-container">
-                <img
-                  src="/market-lion/client/assets/main/visual/product04.png"
-                  class="product-img"
-                  alt="상품 이미지 "
-                />
-                <div>
-                  <button type="button" class="productCart">
-                    <img
-                      src="/market-lion/client/assets/main/visual/Cart.png"
-                      class="cart-img"
-                      alt="장바구니 이미지"
-                    />
-                  </button>
-                </div>
-              </div>
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">[프로쉬] 베이비 세탁세제</h3>
-              <div>
-                <div class="product-price">
-                  <div>
-                    <span class="discount-rate">rate</span>
-                    <span class="discount-price">discount-price</span>
-                  </div>
-                  <div>
-                    <span class="original-price">original-price</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="mainAdvertisement">
-        <img
-          src="/market-lion/client/assets/main/visual/line-banner.png"
-          alt="광고 배너"
-        />
-      </div>
+        <div class="popUp__product--count">
+          <div><span>5,480원</span><span>7,000원</span></div>
+          <div>버튼</div>
+        </div>
 
-      <div class="mainMain">
-        <div class="mainSub-title">
-          <span class="mainSub-titleRecommend-title">놓치면 후회할 가격</span>
+        <div class="popUp__product--total">
+          <p class="total--count">합계</p>
+          <p class="total--price">4,980원</p>
         </div>
-        <div class="mainProduct">
-          <div class="product">
-            <a href="# ">
-              <div class="product-image-container">
-                <img
-                  src="/market-lion/client/assets/main/visual/product01.png"
-                  class="product-img"
-                  alt="상품 이미지 "
-                />
-                <div>
-                  <button type="button" class="productCart">
-                    <img
-                      src="/market-lion/client/assets/main/visual/Cart.png"
-                      class="cart-img"
-                      alt="장바구니 이미지"
-                    />
-                  </button>
-                </div>
-              </div>
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">[풀무원] 탱탱쫄면 (4개입)</h3>
-              <div>
-                <div class="product-price">
-                  <div>
-                    <span class="discount-rate">rate</span>
-                    <span class="discount-price">discount-price</span>
-                  </div>
-                  <div>
-                    <span class="original-price">original-price</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <a href="# ">
-              <div class="product-image-container">
-                <img
-                  src="/market-lion/client/assets/main/visual/product02.jpg"
-                  class="product-img"
-                  alt="상품 이미지 "
-                />
-                <div>
-                  <button type="button" class="productCart">
-                    <img
-                      src="/market-lion/client/assets/main/visual/Cart.png"
-                      class="cart-img"
-                      alt="장바구니 이미지"
-                    />
-                  </button>
-                </div>
-              </div>
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">[온더바디] 죠르디 시카 자석 선쿠션</h3>
-              <div>
-                <div class="product-price">
-                  <div>
-                    <span class="discount-rate">rate</span>
-                    <span class="discount-price">discount-price</span>
-                  </div>
-                  <div>
-                    <span class="original-price">original-price</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <a href="# ">
-              <div class="product-image-container">
-                <img
-                  src="/market-lion/client/assets/main/visual/product03.jpg"
-                  class="product-img"
-                  alt="상품 이미지 "
-                />
-                <div>
-                  <button type="button" class="productCart">
-                    <img
-                      src="/market-lion/client/assets/main/visual/Cart.png"
-                      class="cart-img"
-                      alt="장바구니 이미지"
-                    />
-                  </button>
-                </div>
-              </div>
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">유기농 밀키퀸 현미 4kg</h3>
-              <div>
-                <div class="product-price">
-                  <div>
-                    <span class="discount-rate">rate</span>
-                    <span class="discount-price">discount-price</span>
-                  </div>
-                  <div>
-                    <span class="original-price">original-price</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <a href="# ">
-              <div class="product-image-container">
-                <img
-                  src="/market-lion/client/assets/main/visual/product04.png"
-                  class="product-img"
-                  alt="상품 이미지 "
-                />
-                <div>
-                  <button type="button" class="productCart">
-                    <img
-                      src="/market-lion/client/assets/main/visual/Cart.png"
-                      class="cart-img"
-                      alt="장바구니 이미지"
-                    />
-                  </button>
-                </div>
-              </div>
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">[프로쉬] 베이비 세탁세제</h3>
-              <div>
-                <div class="product-price">
-                  <div>
-                    <span class="discount-rate">rate</span>
-                    <span class="discount-price">discount-price</span>
-                  </div>
-                  <div>
-                    <span class="original-price">original-price</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="popUp__product--benefit">
+          <span class="benefit--save">적립</span
+          ><span class="benefit--explain">
+            로그인 후, 회원할인가와 적립혜택 제공
+          </span>
+        </div>
+
+        <div class="popUp__button--container">
+          <button id="closePopup">취소</button>
+          <button id="putCart">장바구니 담기</button>
         </div>
       </div>
-    </section>
+    </div>
+
+    <script>
+      const openButton = document.getElementById("open");
+      const popUp = document.querySelector(".popUp");
+      const putBtn = popUp.querySelector("#putCart");
+      const closeBtn = popUp.querySelector("#closePopup");
+      const openModal = () => {
+        popUp.classList.remove("hidden");
+      };
+      const closeModal = () => {
+        popUp.classList.add("hidden");
+      };
+      const putModal = () => {
+        popUp.classList.add("hidden");
+      };
+      putBtn.addEventListener("click", putModal);
+      closeBtn.addEventListener("click", closeModal);
+      openButton.addEventListener("click", openModal);
+    </script>
   </body>
 </html>
