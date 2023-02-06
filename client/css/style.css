@@ -33,10 +33,6 @@
   display: none;
 }
 
-.popUp__content {
-  /* padding: 30px 30px; */
-}
-
 .popUp__product--name {
   display: flex;
   font-size: 14px;
